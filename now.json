@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "name": "imenik",
+  "builds": [{ "src": "index.py", "use": "@now/python" }],
+  "routes": [{ "src": "(.*)", "dest": "index.py" }]
+} 
