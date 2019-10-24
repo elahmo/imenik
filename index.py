@@ -31,9 +31,11 @@ def index():
         # parse the response
         bs = BeautifulSoup(res.text)
 
+        # handle the case without results
         if 'Nema rezultata' in bs.text:
             return Response('Nema rezultata')
 
+        # get the data about the recipient
         name = bs.table.findAll('td')[1].text.strip()
         prikljucak = bs.table.findAll('td')[5].text.strip()
         adresa = bs.table.findAll('td')[7].text.strip()
