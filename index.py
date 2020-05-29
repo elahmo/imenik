@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         # get the phone number
-        number = request.form['number']
+        number = ''.join(i for i in request.form['number'] if i.isdigit())
 
         # get the session cookies
         s = requests.Session()
