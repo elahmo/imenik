@@ -45,5 +45,3 @@ def index():
 
         return Response(result)
     return render_template('index.html')
-
-    return Response("Make a POST request with number=000123456 as payload")
