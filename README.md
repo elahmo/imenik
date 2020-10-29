@@ -1,3 +1,5 @@
+HACKTOBER CONTRIBUTIONS WELCOME, NEW OPERATORS WOULD BE GREAT!
+
 # Imenik
 
 A really simple function that takes in a phone number and returns the caller ID.
@@ -13,7 +15,9 @@ and if the number is available in the providers' database, it will be returned.
 
 The list of supported operators is as follows:
 
-- BHTelecom
+- [x] BHTelecom
+- [ ] Eronet
+- [ ] mTel
 
 ## Contributing
 
