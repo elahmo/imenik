@@ -1,3 +1,4 @@
 .now
 venv
 node_modules
+.vercel
