@@ -1,6 +1,8 @@
-BHT = 'bhtelecom'
-ERONET = 'eronet'
-MTEL = 'mtel'
+from .providers import bhtelecom, eronet, mtel
+
+BHT = bhtelecom
+ERONET = eronet
+MTEL = mtel
 
 # chose providers in order of most likely
 AREA_CODE_MAPPINGS = {
