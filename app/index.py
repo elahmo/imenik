@@ -17,7 +17,7 @@ def index():
         # get potential providers for the area code, iterate until result is found
         providers = AREA_CODE_MAPPINGS[area_code]
         for provider in providers:
-            result = provider(area_code, number)
+            result = provider(area_code, phone_number)
             if result['success']:
                 return Response(result['message'])
 
