@@ -15,7 +15,7 @@ def bhtelecom(area, number):
     # post the request
     payload = {
         'di': area,
-        'br': number,
+        'br': f'{area}{number}',
         '_uqid': '',
         '_cdt': '',
         '_hsh': '',
@@ -46,9 +46,28 @@ def bhtelecom(area, number):
 
 
 def eronet(area, number):
+    # post the request
+    payload = {
+        'pozivni_broj2': area,
+        'telefon': number,
+    }
+    res = requests.post('https://www.hteronet.ba/telefonski-imenik?action=check&type=broj', data=payload)
+
+    # parse the response
+    bs = BeautifulSoup(res.text)
+    success = False
+    results = bs.findAll('div', 'results-imenik')
+    if len(results) == 1:
+        message = results[0].text
+    else:
+        success = True
+        rezultat = bs.find('div', id='imenik_results')
+        rezultati = rezultat.findAll('td')
+        message = f"{rezultati[3].text}\n{rezultati[4].text}"
+
     return {
-        'success': False,
-        'message': 'Eronet nije podrzan',
+        'success': success,
+        'message': message,
     }
 
 
