@@ -16,7 +16,7 @@ and if the number is available in the providers' database, it will be returned.
 The list of supported operators is as follows:
 
 - [x] BHTelecom
-- [ ] Eronet
+- [x] Eronet
 - [ ] mTel
 
 ## Contributing
