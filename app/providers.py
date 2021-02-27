@@ -2,6 +2,12 @@ import requests
 from bs4 import BeautifulSoup
 
 def bhtelecom(area, number):
+    # bht is unsupported at the moment as the lookup requires captcha
+    return {
+        'success': False,
+        'message': 'BHT Imenik je trenutno nedostupan.',
+    }
+
     # get the session cookies
     s = requests.Session()
     s.get('https://www.bhtelecom.ba/index.php?id=7345&')
